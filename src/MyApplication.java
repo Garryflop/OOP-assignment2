@@ -18,11 +18,11 @@ public class MyApplication {
         people.add(new Employee("Satoru", "Gojo", "Teacher", 0.3));
 
         Collections.sort(people);
-        printData(people);
+        List<Payable> sortedPayables = new ArrayList<>(people);
+        printData(sortedPayables);
     }
-
-    public static void printData(Iterable<Person> persons ) {
-        for (Payable payable : persons) {
+    public static void printData(Iterable<Payable> people ) {
+        for (Payable payable : people) {
             System.out.printf("%s earns %.2f tenge\n", payable.toString(), payable.getPaymentAmount());
         }
     }
